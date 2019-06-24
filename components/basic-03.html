@@ -12,67 +12,44 @@
 <body>
     <div id="fruits-list">
         <fruits-list-title></fruits-list-title>
-        <table id="customers">
-            <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
-            </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-            </tr>
-            <tr>
-                <td>Berglunds snabbköp</td>
-                <td>Christina Berglund</td>
-                <td>Sweden</td>
-            </tr>
-            <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-            </tr>
-            <tr>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-            </tr>
-            <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-                <td>UK</td>
-            </tr>
-            <tr>
-                <td>Königlich Essen</td>
-                <td>Philip Cramer</td>
-                <td>Germany</td>
-            </tr>
-            <tr>
-                <td>Laughing Bacchus Winecellars</td>
-                <td>Yoshi Tannamuri</td>
-                <td>Canada</td>
-            </tr>
-            <tr>
-                <td>Magazzini Alimentari Riuniti</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
-            </tr>
-            <tr>
-                <td>North/South</td>
-                <td>Simon Crowther</td>
-                <td>UK</td>
-            </tr>
-            <tr>
-                <td>Paris spécialités</td>
-                <td>Marie Bertrand</td>
-                <td>France</td>
-            </tr>
-        </table>
+        <fruits-list-description></fruits-list-description>
+        <fruits-list-table></fruits-list-table>
     </div>
     <script>
         Vue.component('fruits-list-title',{
             template : '<h2>과일목록</h2>'
+        })
+        Vue.component('fruits-list-description',{
+            template : '<p>각 계절 대표적 과일의 목록</p>'
+        })
+        Vue.component('fruits-list-table',{
+            template : `
+                <table class="w3-table w3-bordered w3-striped w3-border test w3-hoverable">
+                    +'<tbody>'
+                        <tr class="w3-green">
+                            <th>계절</th>
+                            <th>과일</th>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>봄</td>
+                            <td>딸기</td>
+                        </tr>
+                        <tr>
+                            <td>여름</td>
+                            <td>수박</td>
+                        </tr>
+                        <tr>
+                            <td>가을</td>
+                            <td>포도</td>
+                        </tr>
+                        <tr>
+                            <td>겨울</td>
+                            <td>귤</td>
+                        </tr>
+                    </tbody>
+                </table>`
         })
         new Vue({el:'#fruits-list'})
     </script>
